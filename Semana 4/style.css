@@ -1,0 +1,348 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap');
+* {
+    outline: none;
+    border: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+*, input, button {
+    font-family: "JetBrains Mono", monospace;
+}
+
+/*========== INPUT / RETIRAR SETAS E EFEITOS ==========*/
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+a img{
+    width: 40%;
+    padding: 5% 15%;
+}
+
+/*
+========== BODY ==========
+*/
+
+/*
+========== ANIMAÇÕES ==========
+
+========== ANIMAÇÃO AO ABRIR ==========
+*/
+
+@keyframes abrir {
+    0% {
+        opacity: 0;
+        transform: translateX(700px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+form, #divBtn, .btnCima, h2 {
+    animation: abrir 3s;
+}
+
+/*
+========== Corpo ==========
+*/
+
+body {
+    box-sizing: border-box;
+}
+
+form, #divBtn {
+    opacity: 1;
+}
+
+/* A PARTIR DESSE PONTO SE ENCONTRA O CSS DA LISTA DE CADASTRADOS */
+#listaCadastros {
+    opacity: 0;
+    z-index: 0;
+    margin-top: -5%;
+    position: absolute; /*Mudar para absolute qnd terminar js*/
+    width: 100%;
+    flex-direction: column;
+}
+
+#h2Lista {
+    margin: auto;
+    text-align: end;
+    font-weight: 600;
+    font-family: 'Work Sans', sans-serif;
+    font-size: clamp(4vw, 3vw, 6vw);
+    line-height: 10vw;
+}
+
+/*TABLE*/
+
+table.table {
+    font-family: 'Work Sans', sans-serif;
+    border: 1px solid #FFFFFF;
+    width: 350px;
+    height: 200px;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+
+table.table tbody td {
+    font-size: 13px;
+    
+}
+
+table.table tr:nth-child(even) {
+    
+    background: #d1d1d1;
+}
+
+table.table thead th {
+    font-size: 17px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    background-color: rgb(255, 0, 0);
+}
+
+table.table thead th:first-child {
+    border-left: none;
+}
+
+table.table tfoot td {
+    font-size: 14px;
+}
+
+.divTable {
+    margin-top: 200px;
+}
+
+.divTable table {
+    margin: auto;
+    text-align: center;
+}
+
+.divTable table tr {
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+}
+
+.divTable table tr th {
+    padding: 10px;
+}
+
+.divTable table tr td {
+    padding: 2px 10px;
+}
+
+/* A PARTIR DESSE PONTO SE ENCONTRA O CSS DO FORM DE CADASTRO*/
+
+
+#h2Cadastro, #h2Contador {
+    text-align: center;
+    font-weight: 600;
+    font-family: 'Work Sans', sans-serif;
+    font-size: clamp(4vw, 3vw, 6vw);
+    line-height: 10vw;
+}
+
+
+#campoDeCadastro {
+    display: flex;
+    justify-content: center;
+    background: rgb(255, 128, 8);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(255, 128, 8, 0.5) 20%, rgba(255, 168, 11, 1) 30%, rgba(255, 208, 14, 1) 50%, rgba(255, 163, 11, 1) 70%, rgba(255, 128, 8, 0.5) 80%, rgba(0, 0, 0, 0) 100%);
+    padding: 25px 0;
+}
+
+#divBtn {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+    margin: auto;
+}
+
+.btnCima{
+    z-index: 2;
+}
+
+.btnCima button {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 100px;
+    background-color: rgb(201, 201, 201);
+    border-bottom: 5px solid rgb(61, 61, 61);
+}
+.btnCima :hover{
+    background-color: rgb(153, 153, 153);
+}
+
+.btnCima button:active {
+    margin-top: 5px;
+    background-color: rgb(153, 153, 153);
+    border-bottom: none;
+}
+
+#divBtnNum{
+    display: flex;
+    justify-content: center;
+}
+
+#btnCima {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+#btnPaginaCadastro {
+    opacity: 0;
+}
+
+#divBtn{
+    font-family: 'Work Sans', sans-serif;
+    font-size: 30px;
+    color: black;
+    padding: 1vw 4vw;
+    border-radius: 100px;
+    border-bottom: 7px solid rgb(61, 61, 61);
+    background-color: rgb(179, 179, 179);
+}
+
+#divBtn:hover {
+    background-color: rgb(153, 153, 153);
+    border-bottom: 7px solid rgb(61, 61, 61);
+}
+
+#divBtn:active {
+    margin-top: 7px;
+    background-color: rgb(153, 153, 153);
+    border-bottom: none;
+}
+
+.required {
+    height: clamp(2em, 2em + 2vw, 3em);
+    min-width: 220px;
+    width: 50vw;
+    margin-bottom: 10px;
+    border-radius: 100px;
+    padding: 0 15px;
+    position: relative;
+    transition: 1s ease;
+}
+
+.required:empty {
+    border-bottom: 5px solid rgb(255, 72, 0);
+    border-left: 5px solid rgb(255, 72, 0);
+}
+
+.required:not(:placeholder-shown) {
+    border-bottom: 5px solid rgb(15, 179, 15);
+    border-left: 5px solid rgb(15, 179, 15);
+}
+
+.nRequired {
+    height: clamp(2em, 2em + 2vw, 3em);
+    min-width: 220px;
+    width: 50vw;
+    margin-bottom: 10px;
+    border-radius: 100px;
+    padding: 0 15px;
+    position: relative;
+    border-bottom: 5px solid rgb(0, 110, 255);
+    border-left: 5px solid rgb(0, 110, 255);
+    transition: 1s ease;
+}
+
+.nRequired:not(:placeholder-shown) {
+    border-bottom: 5px solid rgb(15, 179, 15);
+    border-left: 5px solid rgb(15, 179, 15);
+}
+
+.label {
+    font-weight: 600;
+    font-size: clamp(1.5em, 1vw + 1em, 2em);
+}
+
+/*
+========== ANIMAÇÃO VER CADASTROS ==========
+*/
+
+/*
+========== Sai o Formulário e seu btn ==========
+========== Entra Table e seu btn ==========
+*/
+@keyframes sairForm {
+    0% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    100% {
+        transform: tranlateX(-2000px);
+        opacity: 0;
+    }
+}
+
+.verCadastro {
+    animation: sairForm 3s;
+    /* transform: translateX(-5000px); */
+}
+
+@keyframes entraTable{
+    0%{
+        opacity: 0;
+        transform: translateX(2000px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.verTabela{
+    animation: entraTable 3s;
+}
+
+/*
+========== Sai o Table e seu btn ==========
+========== Entra Form e seu btn ==========
+*/
+
+@keyframes saiTable{
+    0%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+    100%{
+        opacity: 0;
+        transform: translateX(2000px);
+    }
+}
+
+.saiTable{
+    animation: saiTable 3s;
+}
+
+@keyframes entraForm{
+    0%{
+        opacity: 0;
+        transform: translateX(-2000px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.entraForm{
+    animation: entraForm 3s;
+}
